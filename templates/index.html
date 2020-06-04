@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>AMI</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
+</head>
+<body>
+ <div class="login">
+	<h1>Physical appearence report</h1>
+   <form action='/predict' method="post">
+   <table><tr><td><h2>Gender</h2>
+    </td><td><select name="gender" style="background-color: rgb(9, 9, 51); color:cornsilk; width: 100%;">
+            <option>{{a}}</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+             </select>
+    </td></tr></table>
+  <input type="text" name="Height" placeholder="Height in cm" required="required" value="{{b}}"/>
+  <input type="text" name="Weight" placeholder="Weight in kg" required="required" value="{{c}}"/>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+ <br>
+ <br>
+ {{ pred }}
+ </div>
+</body>
+</html>
